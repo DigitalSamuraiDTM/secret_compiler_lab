@@ -1,0 +1,7 @@
+EX22: PROC OPTIONS ( MAIN );
+DCL N BIN FIXED ( 15 ) ;
+DCL S BIN FIXED ( 15 ) INIT ( 0 );
+DO N=1 TO 5, WHILE ( S < 20 ) ;
+S = S + N;
+END;
+END EX22;
