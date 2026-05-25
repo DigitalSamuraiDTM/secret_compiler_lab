@@ -34,7 +34,7 @@
 */
 
 int NISXTXT;                                     /* длина массива          */
-char ISXTXT[MAXNISXTXT][80];                     /* тело массива           */
+char ISXTXT[MAXNISXTXT][800];                     /* тело массива           */
 
 /*
 ***** Б л о к  об'явления рабочих переменных
@@ -600,42 +600,34 @@ char TPR[NVXOD][NNETRM] =
 
 void compress_ISXTXT() {
     I3 = 0;
-    for (I1 = 0; I1 < NISXTXT; I1++) {
-        for (I2 = 0; I2 < 80; I2++)
+    for (I1 = 0; I1 <= NISXTXT; I1++) {
+        for (I2 = 0; I2 < 80; I2++) {
             if (ISXTXT[I1][I2] != '\x0') {
                 if (ISXTXT[I1][I2] == ' ' &&
                     (PREDSYM == ' ' || PREDSYM == ';' ||
                      PREDSYM == ')' || PREDSYM == ':' ||
-                     PREDSYM == '('
-                    )
-                        ) {
+                     PREDSYM == '(') || PREDSYM == ',' ||
+                    PREDSYM == '<') {
                     PREDSYM = ISXTXT[I1][I2];
                     goto L2;
                 }
 
-                if
-                        (
-                        (ISXTXT[I1][I2] == '+' ||
-                         ISXTXT[I1][I2] == '-' ||
-                         ISXTXT[I1][I2] == '=' ||
-                         ISXTXT[I1][I2] == '(' ||
-                         ISXTXT[I1][I2] == ')' ||
-                         ISXTXT[I1][I2] == '*' ||
-                         ISXTXT[I1][I2] == '<'
-                        )
-                        &&
-                        PREDSYM == ' '
-                        ) {
-                    I3--;
+                if((ISXTXT[I1][I2] == '+' ||
+                ISXTXT[I1][I2] == '-' ||
+                ISXTXT[I1][I2] == '=' ||
+                ISXTXT[I1][I2] == '(' ||
+                ISXTXT[I1][I2] == ')' ||
+                ISXTXT[I1][I2] == '*' ||
+                ISXTXT[I1][I2] == '<') &&
+                PREDSYM == ' ') {
+                    if (I3 > 0 && STROKA[I3 - 1] == ' ')
+                        I3--;
                     goto L1;
                 }
 
-
                 if (ISXTXT[I1][I2] == ' ' &&
                     (PREDSYM == '+' || PREDSYM == '-' ||
-                     PREDSYM == '=' || PREDSYM == '*'
-                    )
-                        ) {
+                     PREDSYM == '=' || PREDSYM == '*')) {
                     goto L2;
                 }
 
@@ -646,8 +638,11 @@ void compress_ISXTXT() {
 
                 L2:
                 continue;
-            } else
+            } else{
+                printf("BREAKED: %c . I1: %i, I2: %i\n", ISXTXT[I1][I2], I1, I2);
                 break;
+                }
+        }
     }
     STROKA[I3] = '\x0';
 }
@@ -922,7 +917,7 @@ void ZKARD()                                     /* записи очередн�
     /* ASSTXT                 */
     char i;
     memcpy (ASSTXT[IASSTXT++],
-            ASS_CARD.BUFCARD, 80);
+            ASS_CARD.BUFCARD, 800);
 
     for (i = 0; i < 79; i++)
         ASS_CARD.BUFCARD[i] = ' ';
