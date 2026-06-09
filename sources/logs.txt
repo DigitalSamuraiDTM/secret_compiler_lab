@@ -1,0 +1,670 @@
+Нетерминал OEN прочитан до конца J=80.
+ПРОВЕРКА: -11 , SINT: 'OEN', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=80, SINT: 'OEN'(i=9), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='OEN'. J=80. I='151'. Символ I: ';'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='BUK'. J=88. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='149'. Символ I: 'M'
+ПРОВЕРКА TPR. J=100, STROKA:'P;'(i=23), SINT:'CIF'(j=2). SYMBOL: P. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='149'. Символ I: 'M'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='149'. Символ I: 'M'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=149 J=79 SINT CHAR=';  ' CHAR='M'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'P'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='BUK'. J=85. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='148'. Символ I: 'A'
+ПРОВЕРКА TPR. J=100, STROKA:'MP;'(i=22), SINT:'CIF'(j=2). SYMBOL: M. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='148'. Символ I: 'A'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='148'. Символ I: 'A'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=148 J=79 SINT CHAR=';  ' CHAR='A'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'M'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='BUK'. J=34. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='147'. Символ I: 'X'
+ПРОВЕРКА TPR. J=100, STROKA:'AMP;'(i=17), SINT:'CIF'(j=2). SYMBOL: A. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='147'. Символ I: 'X'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='147'. Символ I: 'X'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=147 J=79 SINT CHAR=';  ' CHAR='X'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'A'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='BUK'. J=91. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='146'. Символ I: 'E'
+ПРОВЕРКА TPR. J=100, STROKA:'XAMP;'(i=24), SINT:'CIF'(j=2). SYMBOL: X. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='146'. Символ I: 'E'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='146'. Символ I: 'E'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=146 J=79 SINT CHAR=';  ' CHAR='E'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'X'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IDE'. J=94. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='BUK'. J=82. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IPR'. J=78. I='145'. Символ I: ' '
+ПРОВЕРКА ALT SINT='   '. J=77. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='D  '. J=76. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='N  '. J=75. I='142'. Символ I: 'E'
+Нетерминал BUK прочитан до конца J=82.
+ПРОВЕРКА: -13 , SINT: 'BUK', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=82, SINT: 'BUK'(i=1), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=142 J=94 SINT CHAR='IDE' CHAR='E'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=94.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=94, SINT: 'IDE'(i=3), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=142 J=97 SINT CHAR='BUK' CHAR='E'
+Cтек: PRO, TEL, OPA, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'ND EXAMP;'(i=40), SINT:'BUK'(j=1). SYMBOL: N. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=143, J=97
+Прочитали VXOD. I=143 J=201 DER='N  ' CHAR='N'
+Прочитали следующее правило. I=143 J=202 SINT CHAR='BUK' CHAR='N'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=202.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=143 J=98 SINT CHAR='IDE' CHAR='N'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=143 J=97 SINT CHAR='BUK' CHAR='N'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'D EXAMP;'(i=20), SINT:'BUK'(j=1). SYMBOL: D. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=144, J=97
+Прочитали VXOD. I=144 J=42 DER='D  ' CHAR='D'
+Прочитали следующее правило. I=144 J=43 SINT CHAR='BUK' CHAR='D'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=43.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=144 J=98 SINT CHAR='IDE' CHAR='D'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=144 J=97 SINT CHAR='BUK' CHAR='D'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:' EXAMP;'(i=46), SINT:'BUK'(j=1). SYMBOL:  . RESULT: 0,
+CHECK -13. DER: BUK. C: OPA
+
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='144'. Символ I: 'D'
+ПРОВЕРКА TPR. J=100, STROKA:' EXAMP;'(i=46), SINT:'CIF'(j=2). SYMBOL:  . RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='144'. Символ I: 'D'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=144 J=154 SINT CHAR='=  ' CHAR='D'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал '=  '. Символ строки: ' '
+ПРОВЕРКА ALT SINT='=  '. J=154. I='144'. Символ I: 'D'
+Нетерминал AVI прочитан до конца J=159.
+ПРОВЕРКА: -14 , SINT: 'AVI', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=159, SINT: 'AVI'(i=0), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='AVI'. J=159. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='144'. Символ I: 'D'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='BUK'. J=43. I='144'. Символ I: 'D'
+Прочитан терминал 'C  '. Символ строки: ' '
+ПРОВЕРКА ALT SINT='C  '. J=45. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='143'. Символ I: 'N'
+ПРОВЕРКА TPR. J=100, STROKA:'D EXAMP;'(i=20), SINT:'CIF'(j=2). SYMBOL: D. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='143'. Символ I: 'N'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=143 J=154 SINT CHAR='=  ' CHAR='N'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал '=  '. Символ строки: 'D'
+ПРОВЕРКА ALT SINT='=  '. J=154. I='143'. Символ I: 'N'
+Нетерминал AVI прочитан до конца J=159.
+ПРОВЕРКА: -14 , SINT: 'AVI', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=159, SINT: 'AVI'(i=0), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='AVI'. J=159. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='143'. Символ I: 'N'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='BUK'. J=202. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='142'. Символ I: 'E'
+ПРОВЕРКА TPR. J=100, STROKA:'ND EXAMP;'(i=40), SINT:'CIF'(j=2). SYMBOL: N. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='142'. Символ I: 'E'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'OPA'(j=10). RESULT: 1,
+Прочитали следующее правило. I=142 J=154 SINT CHAR='=  ' CHAR='E'
+Cтек: PRO, TEL, OPA, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал '=  '. Символ строки: 'N'
+ПРОВЕРКА ALT SINT='=  '. J=154. I='142'. Символ I: 'E'
+Нетерминал AVI прочитан до конца J=159.
+ПРОВЕРКА: -14 , SINT: 'AVI', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=159, SINT: 'AVI'(i=0), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='AVI'. J=159. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='142'. Символ I: 'E'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'OPA'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'OPA'(j=10). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IDE'. J=94. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='BUK'. J=82. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='OPA'. J=183. I='141'. Символ I: ';'
+ПРОВЕРКА TPR. J=247, STROKA:'END EXAMP;'(i=21), SINT:'ODW'(j=16). SYMBOL: E. RESULT: 1,
+CHECK -12. DER: ODW. C: OPA
+
+Заполняем ячейку. SINT: ODW, I=142, J=247
+Прочитали VXOD. I=142 J=74 DER='E  ' CHAR='E'
+Прочитали следующее правило. I=142 J=75 SINT CHAR='N  ' CHAR='E'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'N  '. Символ строки: 'N'
+Прочитали следующее правило. I=143 J=76 SINT CHAR='D  ' CHAR='N'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'D  '. Символ строки: 'D'
+Прочитали следующее правило. I=144 J=77 SINT CHAR='   ' CHAR='D'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал '   '. Символ строки: ' '
+Прочитали следующее правило. I=145 J=78 SINT CHAR='IPR' CHAR=' '
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=78, STROKA:'EXAMP;'(i=21), SINT:'IPR'(j=5). SYMBOL: E. RESULT: 1,
+CHECK -6. DER: IPR. C: OPA
+
+Заполняем ячейку. SINT: IPR, I=146, J=78
+Прочитали VXOD. I=146 J=74 DER='E  ' CHAR='E'
+Прочитали следующее правило. I=146 J=75 SINT CHAR='N  ' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'N  '. Символ строки: 'X'
+ПРОВЕРКА ALT SINT='N  '. J=75. I='146'. Символ I: 'E'
+Нетерминал BUK прочитан до конца J=82.
+ПРОВЕРКА: -7 , SINT: 'BUK', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=82, SINT: 'BUK'(i=1), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=146 J=94 SINT CHAR='IDE' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=94.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=94, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=146 J=97 SINT CHAR='BUK' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'XAMP;'(i=24), SINT:'BUK'(j=1). SYMBOL: X. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=147, J=97
+Прочитали VXOD. I=147 J=90 DER='X  ' CHAR='X'
+Прочитали следующее правило. I=147 J=91 SINT CHAR='BUK' CHAR='X'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=91.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'5' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 4
+Прочитали следующее правило. I=147 J=98 SINT CHAR='IDE' CHAR='X'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=147 J=97 SINT CHAR='BUK' CHAR='X'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'AMP;'(i=17), SINT:'BUK'(j=1). SYMBOL: A. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=148, J=97
+Прочитали VXOD. I=148 J=33 DER='A  ' CHAR='A'
+Прочитали следующее правило. I=148 J=34 SINT CHAR='BUK' CHAR='A'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=34.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'5' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 4
+Прочитали следующее правило. I=148 J=98 SINT CHAR='IDE' CHAR='A'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=148 J=97 SINT CHAR='BUK' CHAR='A'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'MP;'(i=22), SINT:'BUK'(j=1). SYMBOL: M. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=149, J=97
+Прочитали VXOD. I=149 J=84 DER='M  ' CHAR='M'
+Прочитали следующее правило. I=149 J=85 SINT CHAR='BUK' CHAR='M'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=85.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'5' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 4
+Прочитали следующее правило. I=149 J=98 SINT CHAR='IDE' CHAR='M'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=149 J=97 SINT CHAR='BUK' CHAR='M'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'P;'(i=23), SINT:'BUK'(j=1). SYMBOL: P. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=150, J=97
+Прочитали VXOD. I=150 J=87 DER='P  ' CHAR='P'
+Прочитали следующее правило. I=150 J=88 SINT CHAR='BUK' CHAR='P'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=88.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'5' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 4
+Прочитали следующее правило. I=150 J=98 SINT CHAR='IDE' CHAR='P'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=150 J=97 SINT CHAR='BUK' CHAR='P'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:';'(i=47), SINT:'BUK'(j=1). SYMBOL: ;. RESULT: 0,
+CHECK -13. DER: BUK. C: OPA
+
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='150'. Символ I: 'P'
+ПРОВЕРКА TPR. J=100, STROKA:';'(i=47), SINT:'CIF'(j=2). SYMBOL: ;. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='150'. Символ I: 'P'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='150'. Символ I: 'P'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=150 J=79 SINT CHAR=';  ' CHAR='P'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: ';'
+Прочитали следующее правило. I=151 J=80 SINT CHAR='OEN' CHAR=';'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал OEN прочитан до конца J=80.
+ПРОВЕРКА: 1 , SINT: 'OEN', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=80, SINT: 'OEN'(i=9), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='OEN'. J=80. I='151'. Символ I: ';'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='BUK'. J=88. I='150'. Символ I: 'P'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='149'. Символ I: 'M'
+ПРОВЕРКА TPR. J=100, STROKA:'P;'(i=23), SINT:'CIF'(j=2). SYMBOL: P. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='149'. Символ I: 'M'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='149'. Символ I: 'M'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=149 J=79 SINT CHAR=';  ' CHAR='M'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'P'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='BUK'. J=85. I='149'. Символ I: 'M'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='148'. Символ I: 'A'
+ПРОВЕРКА TPR. J=100, STROKA:'MP;'(i=22), SINT:'CIF'(j=2). SYMBOL: M. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='148'. Символ I: 'A'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='148'. Символ I: 'A'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=148 J=79 SINT CHAR=';  ' CHAR='A'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'M'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='BUK'. J=34. I='148'. Символ I: 'A'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='147'. Символ I: 'X'
+ПРОВЕРКА TPR. J=100, STROKA:'AMP;'(i=17), SINT:'CIF'(j=2). SYMBOL: A. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='147'. Символ I: 'X'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='147'. Символ I: 'X'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=147 J=79 SINT CHAR=';  ' CHAR='X'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'A'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='BUK'. J=91. I='147'. Символ I: 'X'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='146'. Символ I: 'E'
+ПРОВЕРКА TPR. J=100, STROKA:'XAMP;'(i=24), SINT:'CIF'(j=2). SYMBOL: X. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='146'. Символ I: 'E'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='146'. Символ I: 'E'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=146 J=79 SINT CHAR=';  ' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: 'X'
+ПРОВЕРКА ALT SINT=';  '. J=79. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IDE'. J=94. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='BUK'. J=82. I='146'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IPR'. J=78. I='145'. Символ I: ' '
+ПРОВЕРКА ALT SINT='   '. J=77. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='D  '. J=76. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='N  '. J=75. I='142'. Символ I: 'E'
+Нетерминал BUK прочитан до конца J=82.
+ПРОВЕРКА: -13 , SINT: 'BUK', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=82, SINT: 'BUK'(i=1), CEL:'ODW'(j=16). RESULT: 1,
+Прочитали следующее правило. I=142 J=94 SINT CHAR='IDE' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=94.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=94, SINT: 'IDE'(i=3), CEL:'ODW'(j=16). RESULT: 1,
+Прочитали следующее правило. I=142 J=97 SINT CHAR='BUK' CHAR='E'
+Cтек: PRO, TEL, ODW, IPR, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'ND EXAMP;'(i=40), SINT:'BUK'(j=1). SYMBOL: N. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=143, J=97
+Прочитали VXOD. I=143 J=201 DER='N  ' CHAR='N'
+Прочитали следующее правило. I=143 J=202 SINT CHAR='BUK' CHAR='N'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=202.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=143 J=98 SINT CHAR='IDE' CHAR='N'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'ODW'(j=16). RESULT: 1,
+Прочитали следующее правило. I=143 J=97 SINT CHAR='BUK' CHAR='N'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'D EXAMP;'(i=20), SINT:'BUK'(j=1). SYMBOL: D. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=144, J=97
+Прочитали VXOD. I=144 J=42 DER='D  ' CHAR='D'
+Прочитали следующее правило. I=144 J=43 SINT CHAR='BUK' CHAR='D'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=43.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=144 J=98 SINT CHAR='IDE' CHAR='D'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -6 , SINT: 'IDE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'ODW'(j=16). RESULT: 1,
+Прочитали следующее правило. I=144 J=97 SINT CHAR='BUK' CHAR='D'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:' EXAMP;'(i=46), SINT:'BUK'(j=1). SYMBOL:  . RESULT: 0,
+CHECK -13. DER: BUK. C: OPA
+
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='144'. Символ I: 'D'
+ПРОВЕРКА TPR. J=100, STROKA:' EXAMP;'(i=46), SINT:'CIF'(j=2). SYMBOL:  . RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='144'. Символ I: 'D'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='144'. Символ I: 'D'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='BUK'. J=43. I='144'. Символ I: 'D'
+Прочитан терминал 'C  '. Символ строки: ' '
+ПРОВЕРКА ALT SINT='C  '. J=45. I='144'. Символ I: 'D'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='143'. Символ I: 'N'
+ПРОВЕРКА TPR. J=100, STROKA:'D EXAMP;'(i=20), SINT:'CIF'(j=2). SYMBOL: D. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='143'. Символ I: 'N'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='143'. Символ I: 'N'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='IDE'. J=98. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='BUK'. J=202. I='143'. Символ I: 'N'
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='142'. Символ I: 'E'
+ПРОВЕРКА TPR. J=100, STROKA:'ND EXAMP;'(i=40), SINT:'CIF'(j=2). SYMBOL: N. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='142'. Символ I: 'E'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -6 , SINT: 'IPE', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='142'. Символ I: 'E'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: -6 , SINT: 'IPR', CEL:'ODW'
+ПРОВЕРКА TPR НТ. J=105, SINT: 'IPR'(i=5), CEL:'ODW'(j=16). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPR'. J=105. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='IDE'. J=94. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='BUK'. J=82. I='142'. Символ I: 'E'
+ПРОВЕРКА ALT SINT='ODW'. J=247. I='141'. Символ I: ';'
+'K' уменьшен: 1
+Прочитали следующее правило. I=141 J=173 SINT CHAR='OEN' CHAR=';'
+Cтек: PRO, TEL, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=173, STROKA:'END EXAMP;'(i=21), SINT:'OEN'(j=9). SYMBOL: E. RESULT: 1,
+CHECK -11. DER: OEN. C: OPA
+
+Заполняем ячейку. SINT: OEN, I=142, J=173
+Прочитали VXOD. I=142 J=74 DER='E  ' CHAR='E'
+Прочитали следующее правило. I=142 J=75 SINT CHAR='N  ' CHAR='E'
+Cтек: PRO, OEN, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'N  '. Символ строки: 'N'
+Прочитали следующее правило. I=143 J=76 SINT CHAR='D  ' CHAR='N'
+Cтек: PRO, OEN, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'D  '. Символ строки: 'D'
+Прочитали следующее правило. I=144 J=77 SINT CHAR='   ' CHAR='D'
+Cтек: PRO, OEN, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал '   '. Символ строки: ' '
+Прочитали следующее правило. I=145 J=78 SINT CHAR='IPR' CHAR=' '
+Cтек: PRO, OEN, ODW, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=78, STROKA:'EXAMP;'(i=21), SINT:'IPR'(j=5). SYMBOL: E. RESULT: 1,
+CHECK -6. DER: IPR. C: OPA
+
+Заполняем ячейку. SINT: IPR, I=146, J=78
+Прочитали VXOD. I=146 J=74 DER='E  ' CHAR='E'
+Прочитали следующее правило. I=146 J=75 SINT CHAR='N  ' CHAR='E'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал 'N  '. Символ строки: 'X'
+ПРОВЕРКА ALT SINT='N  '. J=75. I='146'. Символ I: 'E'
+Нетерминал BUK прочитан до конца J=82.
+ПРОВЕРКА: -7 , SINT: 'BUK', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=82, SINT: 'BUK'(i=1), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=146 J=94 SINT CHAR='IDE' CHAR='E'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=94.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=94, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=146 J=97 SINT CHAR='BUK' CHAR='E'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'XAMP;'(i=24), SINT:'BUK'(j=1). SYMBOL: X. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=147, J=97
+Прочитали VXOD. I=147 J=90 DER='X  ' CHAR='X'
+Прочитали следующее правило. I=147 J=91 SINT CHAR='BUK' CHAR='X'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=91.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=147 J=98 SINT CHAR='IDE' CHAR='X'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=147 J=97 SINT CHAR='BUK' CHAR='X'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'AMP;'(i=17), SINT:'BUK'(j=1). SYMBOL: A. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=148, J=97
+Прочитали VXOD. I=148 J=33 DER='A  ' CHAR='A'
+Прочитали следующее правило. I=148 J=34 SINT CHAR='BUK' CHAR='A'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=34.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=148 J=98 SINT CHAR='IDE' CHAR='A'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=148 J=97 SINT CHAR='BUK' CHAR='A'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'MP;'(i=22), SINT:'BUK'(j=1). SYMBOL: M. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=149, J=97
+Прочитали VXOD. I=149 J=84 DER='M  ' CHAR='M'
+Прочитали следующее правило. I=149 J=85 SINT CHAR='BUK' CHAR='M'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=85.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=149 J=98 SINT CHAR='IDE' CHAR='M'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=149 J=97 SINT CHAR='BUK' CHAR='M'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:'P;'(i=23), SINT:'BUK'(j=1). SYMBOL: P. RESULT: 1,
+CHECK -13. DER: BUK. C: OPA
+
+Заполняем ячейку. SINT: BUK, I=150, J=97
+Прочитали VXOD. I=150 J=87 DER='P  ' CHAR='P'
+Прочитали следующее правило. I=150 J=88 SINT CHAR='BUK' CHAR='P'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал BUK прочитан до конца J=88.
+ПРОВЕРКА: 0 , SINT: 'BUK', CEL:'BUK'
+ПРОВЕРКА 2: K:'4' ,CEL[K-1]:'BUK'(i=1). RESULT: 0
+'K' уменьшен: 3
+Прочитали следующее правило. I=150 J=98 SINT CHAR='IDE' CHAR='P'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал IDE прочитан до конца J=98.
+ПРОВЕРКА: -12 , SINT: 'IDE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=98, SINT: 'IDE'(i=3), CEL:'IPR'(j=5). RESULT: 1,
+Прочитали следующее правило. I=150 J=97 SINT CHAR='BUK' CHAR='P'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+ПРОВЕРКА TPR. J=97, STROKA:';'(i=47), SINT:'BUK'(j=1). SYMBOL: ;. RESULT: 0,
+CHECK -13. DER: BUK. C: OPA
+
+ПРОВЕРКА ALT SINT='BUK'. J=97. I='150'. Символ I: 'P'
+ПРОВЕРКА TPR. J=100, STROKA:';'(i=47), SINT:'CIF'(j=2). SYMBOL: ;. RESULT: 0,
+CHECK -12. DER: CIF. C: OPA
+
+ПРОВЕРКА ALT SINT='CIF'. J=100. I='150'. Символ I: 'P'
+Нетерминал IPE прочитан до конца J=103.
+ПРОВЕРКА: -13 , SINT: 'IPE', CEL:'IPR'
+ПРОВЕРКА TPR НТ. J=103, SINT: 'IPE'(i=4), CEL:'IPR'(j=5). RESULT: 0,
+ПРОВЕРКА ALT SINT='IPE'. J=103. I='150'. Символ I: 'P'
+Нетерминал IPR прочитан до конца J=105.
+ПРОВЕРКА: 0 , SINT: 'IPR', CEL:'IPR'
+ПРОВЕРКА 2: K:'3' ,CEL[K-1]:'IPR'(i=5). RESULT: 0
+'K' уменьшен: 2
+Прочитали следующее правило. I=150 J=79 SINT CHAR=';  ' CHAR='P'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Прочитан терминал ';  '. Символ строки: ';'
+Прочитали следующее правило. I=151 J=80 SINT CHAR='OEN' CHAR=';'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал OEN прочитан до конца J=80.
+ПРОВЕРКА: 0 , SINT: 'OEN', CEL:'OEN'
+ПРОВЕРКА 2: K:'2' ,CEL[K-1]:'OEN'(i=9). RESULT: 0
+'K' уменьшен: 1
+Прочитали следующее правило. I=151 J=174 SINT CHAR='PRO' CHAR=';'
+Cтек: PRO, OEN, IPR, BUK, BUK, , , , , , , , , , , , , , , ,
+Нетерминал PRO прочитан до конца J=174.
+ПРОВЕРКА: 0 , SINT: 'PRO', CEL:'PRO'
+Синт анализ успешно!трансляция завершена успешно
