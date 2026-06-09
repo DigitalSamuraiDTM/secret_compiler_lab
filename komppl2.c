@@ -798,6 +798,7 @@ int sint_ANAL() {
 
             L5:
 
+            printf("ПРОВЕРКА 2: K:'%i' ,CEL[K-1]:'%s'(i=%i). RESULT: %i \n",K,CEL[K - 1].CEL1, numb(CEL[K - 1].CEL1, 3), TPR[numb(CEL[K - 1].CEL1, 3)][numb(CEL[K - 1].CEL1, 3)]);
             if (TPR[numb(CEL[K - 1].CEL1, 3)][numb(CEL[K - 1].CEL1, 3)]) {
                 J = VXOD[numb(CEL[K - 1].CEL1, 3)].VX;
                 goto L3;
@@ -807,6 +808,7 @@ int sint_ANAL() {
 
             J = CEL[K - 1].CEL3;
             K--;
+            printf("'K' уменьшен: %i\n", K);
             goto L3;
         }
 
