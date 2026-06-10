@@ -62,13 +62,13 @@ union                                             /*шаблон для гене
 {                                                /*записи выходного файла  */
     char BUFCARD[80];                           /*на АССЕМБЛЕРЕ IBM 370   */
     struct {
-        char METKA[8];
+        char METKA[8]; // метка
         char PROB1;
-        char OPERAC[5];
+        char OPERAC[5]; // КОП
         char PROB2;
-        char OPERAND[12];
+        char OPERAND[12]; // операнд
         char PROB3;
-        char COMM[52];
+        char COMM[52]; // комментарий
     } _BUFCARD;
 } ASS_CARD;
 
@@ -1118,50 +1118,47 @@ int ZNK1() {
     return 0;
 }
 
+int ODW1() {
+    return 0;
+}
+
+int ODW2() {
+    return 0;
+}
+
 
 int AVI2() {
     char i;
-    FORM();                                        /*форматируем правую часть*/
+    FORM();
 
-
-    if (IFORMT == 1)                              /* если правая часть одно-*/
-    {                                            /* термовая, то:          */
-        for (i = 0; i < ISYM; i++)                  /* ищем этот терм в табли-*/
-        {                                            /* це имен  и             */
-            if (!strcmp(SYM[i].NAME, FORMT[0]) &&/* если находим, то:      */
+    if (IFORMT == 1)
+    {
+        for (i = 0; i < ISYM; i++)
+        {
+            if (!strcmp(SYM[i].NAME, FORMT[0]) &&
                 strlen(SYM[i].NAME) ==
                 strlen(FORMT[0])
                     ) {
-                if (SYM[i].TYPE == 'B')              /* в случае типа=bin fixed*/
-                {
+                if (SYM[i].TYPE == 'B'){
 
-                    if (strcmp(SYM[i].RAZR, "15")    /* и разрядности <= 15    */
-                        <= 0)
-                        memcpy (ASS_CARD._BUFCARD.OPERAC,   /* формируем код ассембле-*/
-                                "LH", 2);/* ровской операции LH,   */
+                    if (strcmp(SYM[i].RAZR, "15")<= 0)
+                        memcpy (ASS_CARD._BUFCARD.OPERAC,"LH", 2);
                     else
-                        memcpy (ASS_CARD._BUFCARD.OPERAC,   /* а при разрядности >15  */
-                                "L", 1);/* формируем код ассембле-*/
-                    /* ровской операции L     */
+                        memcpy (ASS_CARD._BUFCARD.OPERAC,"L", 1);
 
-                    strcpy (ASS_CARD._BUFCARD.OPERAND,   /*       формируем        */
-                            "RRAB,");/*       первый  и        */
-                    strcat (ASS_CARD._BUFCARD.OPERAND,   /* второй операнды ассемб-*/
-                            FORMT[0]);/* леровской операции     */
 
-                    ASS_CARD._BUFCARD.OPERAND[strlen    /* вставляем разделитель  */
-                            (ASS_CARD._BUFCARD.OPERAND)] = ' ';
+                    strcpy (ASS_CARD._BUFCARD.OPERAND,"RRAB,");
+                    strcat (ASS_CARD._BUFCARD.OPERAND,FORMT[0]);
 
-                    memcpy (ASS_CARD._BUFCARD.COMM,      /* и построчный коментарий*/
-                            "Загрузка переменной в регистр", 29);
+                    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
 
-                    ZKARD();                             /* запомнить операцию ас- */
-                    /* семблера  и            */
-                    return 0;                             /* завершить программу    */
+                    memcpy (ASS_CARD._BUFCARD.COMM, "Загрузка переменной в регистр", 29);
+
+                    ZKARD();
+                    return 0;
                 } else
-                    return 3;                              /* если тип терма не bin  */
-                /* fixed,то выход по ошиб-*/
-                /* ке                     */
+                    return 3;
+
             }
         }
         return 4;                                     /* если терм-идентификатор*/
@@ -1472,36 +1469,43 @@ int ZNK2() {
 
 
 int gen_COD() {
+    printf("ГЕНЕРАЦИЯ КОДА!\n");
     int NOSH;
 
     int (*FUN[NNETRM][2])() =
             {
-                    {/*    1  */    AVI1, AVI2},
-                    {/*    2  */    BUK1, BUK2},
-                    {/*    3  */    CIF1, CIF2},
-                    {/*    4  */    IDE1, IDE2},
-                    {/*    5  */    IPE1, IPE2},
-                    {/*    6  */    IPR1, IPR2},
-                    {/*    7  */    LIT1, LIT2},
-                    {/*    8  */    MAN1, MAN2},
-                    {/*    9  */    ODC1, ODC2},
-                    {/*   10  */    OEN1, OEN2},
-                    {/*   11  */    OPA1, OPA2},
-                    {/*   12  */    OPR1, OPR2},
-                    {/*   13  */    PRO1, PRO2},
-                    {/*   14  */    RZR1, RZR2},
-                    {/*   15  */    TEL1, TEL2},
-                    {/*   16  */    ZNK1, ZNK2}
+                    {/*    0  */    AVI1, AVI2},
+                    {/*    1  */    BUK1, BUK2},
+                    {/*    2  */    CIF1, CIF2},
+                    {/*    3  */    IDE1, IDE2},
+                    {/*    4  */    IPE1, IPE2},
+                    {/*    5  */    IPR1, IPR2},
+                    {/*    6  */    LIT1, LIT2},
+                    {/*    7  */    MAN1, MAN2},
+                    {/*    8  */    ODC1, ODC2},
+                    {/*   9  */    OEN1, OEN2},
+                    {/*   10  */    OPA1, OPA2},
+                    {/*   11  */    OPR1, OPR2},
+                    {/*   12  */    PRO1, PRO2},
+                    {/*   13  */    RZR1, RZR2},
+                    {/*   14  */    TEL1, TEL2},
+                    {/*   15  */    ZNK1, ZNK2},
+                    {/*   16  */    ODW1, ODW2},
             };
 
     for (I2 = 0; I2 < L; I2++)
-        if ((NOSH = FUN[numb(DST[I2].DST1, 3)][0]()) != 0)
+        if ((NOSH = FUN[numb(DST[I2].DST1, 3)][0]()) != 0) {
+            printf("Ошибка при генерации ПЕРВОЙ итерации. I2=%i. DST=%s\n", I2, DST[I2].DST1);
             return (NOSH);
+        }
 
 
     for (I2 = 0; I2 < L; I2++)
-        if ((NOSH = FUN[numb(DST[I2].DST1, 3)][1]()) != 0)
+        if ((NOSH = FUN[numb(DST[I2].DST1, 3)][1]()) != 0) {
+            printf("Ошибка при генерации ВТОРОЙ итерации. I2=%i. DST=%s\n", I2, DST[I2].DST1);
+
             return (NOSH);
+        }
     return 0;
 
 }
@@ -1560,7 +1564,10 @@ int main(int argc, char **argv) {
         printf("%s\n", "трансляция прервана");
         return 0;
     } else {
-        printf("Синт анализ успешно!");
+        printf("DST:\n");
+        for (int i = 0; i < L; ++i) {
+            printf("I=%i, DST='%s'\n",i, DST[i].DST1);
+        }
         switch (gen_COD()) {
             case 0:
                 printf("%s\n", "трансляция завершена успешно");
