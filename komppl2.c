@@ -927,7 +927,8 @@ void FORM()                                      /* п р о г р а м м а  
             STROKA[i] == '(' || STROKA[i] == ')' ||
             STROKA[i] == ';' || STROKA[i] == '+' ||
             STROKA[i] == '-' || STROKA[i] == '=' ||
-            STROKA[i] == '*'
+            STROKA[i] == '*' || STROKA[i] == ',' ||
+            STROKA[i] == '<'
                 ) {
             FORMT[IFORMT][i - j] = '\x0';
             IFORMT++;
@@ -1122,7 +1123,88 @@ int ODW1() {
     return 0;
 }
 
-int ODW2() {
+int ODW2()
+{
+    FORM();
+
+    /*
+     * N = 1
+     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"LHI",3);
+
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"RN,");
+    strcat(ASS_CARD._BUFCARD.OPERAND,FORMT[2]);
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Инит упр пер",34);
+
+    ZKARD();
+
+    /*
+     * LH RS,S
+     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"LH",2);
+
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"RS,");
+    strcat(ASS_CARD._BUFCARD.OPERAND,FORMT[7]);
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Загрузка переменной условия",27);
+
+    ZKARD();
+
+    /*
+     * LOOP CH RN,=H'5'
+     */
+    strcpy(ASS_CARD._BUFCARD.METKA,"LOOP");
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"LH",2);
+
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"RN,=H'");
+    strcat(ASS_CARD._BUFCARD.OPERAND,FORMT[4]);
+    strcat(ASS_CARD._BUFCARD.OPERAND,"'");
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Проверка верхней границы TO",28);
+
+    ZKARD();
+
+    /*
+     * BH EXIT
+     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"BH",2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"EXIT");
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Выход если N больше границы",29);
+
+    ZKARD();
+
+    /*
+     * CH RS,=H'20'
+     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"CH",2);
+
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"RS,=H'");
+    strcat(ASS_CARD._BUFCARD.OPERAND,FORMT[8]);
+    strcat(ASS_CARD._BUFCARD.OPERAND,"'");
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Проверка условия WHILE",22);
+
+    ZKARD();
+
+    /*
+     * BNL EXIT
+     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC,"BNL",3);
+    strcpy(ASS_CARD._BUFCARD.OPERAND,"EXIT");
+
+    memcpy(ASS_CARD._BUFCARD.COMM,
+           "Выход при нарушении WHILE",27);
+
+    ZKARD();
+
     return 0;
 }
 
