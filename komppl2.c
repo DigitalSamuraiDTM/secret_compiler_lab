@@ -891,19 +891,30 @@ char NFIL[30] = "\x0";                             /* хранилище име�
 long int VALUE(char *s)                        /* п р о г р а м м а      */
 {                                                /* перевода двоичной      */
     long int S;                                     /* константы из ASCIIz-ви-*/
-    int i;                                          /* да во внутреннее пред- */
+    int i, mult;                                          /* да во внутреннее пред- */
     /* ставление типа long int*/
     i = 0;
     S = 0;
-    while (*(s + i) != 'B') {
+    while (*(s + i) != 'B' && *(s+i) != '\x0') {
 
         S <<= 1;
         if (*(s + i) == '1')
             S++;
         i++;
     }
+    if (*(s+i) == 'B') {
+        return S;
+    } else {
+        S = 0;
+        mult = 1;
+        while(i) {
+            i--;
+            S += (*(s+i) - '0')*mult;
+            mult *=10;
+        }
+        return S;
+    }
 
-    return (S);
 }
 
 
@@ -1121,7 +1132,28 @@ int ZNK1() {
     return 0;
 }
 
+
 int ODW1() {
+    FORM();
+    strcpy(SYM[ISYM].NAME, "C");
+    strcat(SYM[ISYM].NAME, FORMT[2]);
+    strcpy (SYM[ISYM].RAZR, FORMT[2]);
+    strcpy (SYM[ISYM].INIT, FORMT[2]);
+    SYM[ISYM].TYPE = 'B';
+    ISYM++;
+    strcpy(SYM[ISYM].NAME, "C");
+    strcat(SYM[ISYM].NAME, FORMT[4]);
+    strcpy (SYM[ISYM].RAZR, FORMT[4]);
+    strcpy (SYM[ISYM].INIT, FORMT[4]);
+    SYM[ISYM].TYPE = 'B';
+    ISYM++;
+    strcpy(SYM[ISYM].NAME, "C");
+    strcat(SYM[ISYM].NAME, FORMT[7]);
+    strcpy (SYM[ISYM].RAZR, FORMT[7]);
+    strcpy (SYM[ISYM].INIT, FORMT[7]);
+    SYM[ISYM].TYPE = 'B';
+    ISYM++;
+
     return 0;
 }
 
@@ -1129,194 +1161,141 @@ int ODW2()
 {
     FORM();
 
-    /*
-     * LHI RN,1
-     * Инициализация N=1
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "LHI", 3);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,");
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN, C");
     strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[2]);
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "initialization loop condition",
-           29);
-
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"initialization loop condition",29);
     ZKARD();
 
 
-    /*
-     * LH RS,S
-     * Загрузка S
-     */
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "STH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[1]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"Load variable",13);
+    ZKARD();
+
+    strcpy(ASS_CARD._BUFCARD.METKA, "LOOP");
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[1]);
+    memcpy(ASS_CARD._BUFCARD.COMM,"Load current value",18);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    ZKARD();
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "CH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,C");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[4]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+
+    memcpy(ASS_CARD._BUFCARD.COMM,"check WHILE",11);
+
+    ZKARD();
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "BC", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "2,CONT");
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"go to if condition success",26);
+    ZKARD();
+
+
     memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
 
     strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
-    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[7]);
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
 
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "Загрузка S",
-           10);
-
+    memcpy(ASS_CARD._BUFCARD.COMM,"load current value from variable to register", 44);
     ZKARD();
 
-
-    /*
-     * LOOP CH RN,=H'5'
-     * Проверка границы TO
-     */
-    strcpy(ASS_CARD._BUFCARD.METKA, "LOOP");
-
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "CH", 2);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,=H'");
-    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[4]);
-    strcat(ASS_CARD._BUFCARD.OPERAND, "'");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "check TO",
-           8);
-
-    ZKARD();
-
-
-    /*
-     * BH EXIT
-     * Выход если N > 5
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "BH", 2);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "EXIT");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "Exit due to condition check",
-           27);
-
-    ZKARD();
-
-
-    /*
-     * CH RS,=H'20'
-     * Проверка WHILE
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "CH", 2);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,=H'");
-    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[8]);
-    strcat(ASS_CARD._BUFCARD.OPERAND, "'");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "check WHILE",
-           11);
-
-    ZKARD();
-
-
-    /*
-     * BNL EXIT
-     * Выход если S >= 20
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "BNL", 3);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "EXIT");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "exit due to condition",
-           21);
-
-    ZKARD();
-
-
-    /*
-     * AH RS,RN
-     * S = S + N
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "AH", 2);
-
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "AR", 2);
     strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,RN");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "S = S + N",
-           9);
-
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM, "Execute loop body", 17);
     ZKARD();
 
-
-    /*
-     * STH RS,S
-     * Сохранение S
-     */
     memcpy(ASS_CARD._BUFCARD.OPERAC, "STH", 3);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,S");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "saving",
-           6);
-
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"store updated value",19);
     ZKARD();
 
-
-    /*
-     * AH RN,=H'1'
-     * N = N + 1
-     */
     memcpy(ASS_CARD._BUFCARD.OPERAC, "AH", 2);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,=H'1'");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "N = N + 1",
-           9);
-
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,C");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[1]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"increment loop",14);
     ZKARD();
 
-
-    /*
-     * STH RN,N
-     * Сохранение N
-     */
     memcpy(ASS_CARD._BUFCARD.OPERAC, "STH", 3);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[1]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"store updated value",19);
+    ZKARD();
 
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,N");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "save N",
-           6);
-
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "BC", 2);
+//    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "15,LOOP");
+    memcpy(ASS_CARD._BUFCARD.COMM,"go to begin of loop",19);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
     ZKARD();
 
 
-    /*
-     * B LOOP
-     * Переход в начало цикла
-     */
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "B", 1);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "LOOP");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "go to begin of loop",
-           19);
-
+    strcpy(ASS_CARD._BUFCARD.METKA, "CONT");
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"load current value from memory into register",44);
     ZKARD();
 
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "CH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS, C");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[7]);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"check while condition", 21);
+    ZKARD();
 
-    /*
-     * EXIT BCR 15,14
-     * Выход из цикла
-     */
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "BC", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "10,EXIT");
+    memcpy(ASS_CARD._BUFCARD.COMM,"branch to exit if first condition out", 37);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    ZKARD();
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "AH", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[11]);
+    memcpy(ASS_CARD._BUFCARD.COMM,"add value", 9);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    ZKARD();
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "STH", 3);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
+    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    memcpy(ASS_CARD._BUFCARD.COMM,"store updated value in memory", 29);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    ZKARD();
+
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "BC", 2);
+//    strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "15,CONT");
+    memcpy(ASS_CARD._BUFCARD.COMM,"unconditional branch to continue", 32);
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    ZKARD();
+
     strcpy(ASS_CARD._BUFCARD.METKA, "EXIT");
-
-    memcpy(ASS_CARD._BUFCARD.OPERAC, "BCR", 3);
-
-    strcpy(ASS_CARD._BUFCARD.OPERAND, "15,14");
-
-    memcpy(ASS_CARD._BUFCARD.COMM,
-           "exit from cycle",
-           15);
-
+    memcpy(ASS_CARD._BUFCARD.OPERAC, "BCR", 2);
+    strcpy(ASS_CARD._BUFCARD.OPERAND, "15,RVIX");
+    ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+    memcpy(ASS_CARD._BUFCARD.COMM,"return control",14);
     ZKARD();
+
+
+
 
     return 0;
 }
@@ -1462,54 +1441,34 @@ int ODC2() {
 int OEN2() {
     char RAB[20];
     char i = 0;
-    FORM();                                        /* форматируем ПЛ1-опера- */
-    /* тор END                */
+    FORM();
 
-    memcpy (ASS_CARD._BUFCARD.OPERAC, "BCR", 3);  /* формируем код безуслов-*/
-    /*ного возврата управления*/
-    /* в вызывающую программу */
+    memcpy (ASS_CARD._BUFCARD.OPERAC, "BCR", 3);
+    memcpy (ASS_CARD._BUFCARD.OPERAND, "15,14", 5);
+    memcpy (ASS_CARD._BUFCARD.COMM, "exit from program", 17);
 
-    memcpy (ASS_CARD._BUFCARD.OPERAND, "15,14", 5);/* операнды команды и     */
+    ZKARD();
 
-    memcpy (ASS_CARD._BUFCARD.COMM,                /* поле построчного комен-*/
-            "exit from program", 17);/* тария                  */
+    for (i = 0; i < ISYM; i++) {
+        if (isalpha(SYM[i].NAME[0])){
+            if (SYM[i].TYPE == 'B'){
+                strcpy (ASS_CARD._BUFCARD.METKA, SYM[i].NAME);
+                ASS_CARD._BUFCARD.METKA[strlen(ASS_CARD._BUFCARD.METKA)] = ' ';
 
-    ZKARD();                                       /* запомнить опреацию     */
+                memcpy (ASS_CARD._BUFCARD.OPERAC, "DC", 2);
 
-    for (i = 0; i < ISYM; i++) {                                              /* если строка табл.SYM   */
-        if (isalpha(SYM[i].NAME[0]))           /* содержит идентификатор,*/
-            /* т.е.начинается с буквы,*/
-        {                                            /* то:                    */
-            if (SYM[i].TYPE == 'B')                  /* если тип оператора bin */
-                /* fixed, то:             */
-            {
-                strcpy (ASS_CARD._BUFCARD.METKA,         /* пишем идентификатор в  */
-                        SYM[i].NAME); /* поле метки псевдоопера-*/
-                /* ции DC                 */
-                ASS_CARD._BUFCARD.METKA[strlen
-                        (ASS_CARD._BUFCARD.METKA)] = ' '; /* пишем разделитель полей*/
-
-                memcpy (ASS_CARD._BUFCARD.OPERAC,        /* пишем код псевдоопера- */
-                        "DC", 2); /* ции DC                 */
-
-                if (strcmp(SYM[i].RAZR, "15") <= 0) /* формируем операнды псе-*/
-                    /* вдооперации DC         */
-                    strcpy (ASS_CARD._BUFCARD.OPERAND,      /* для случая полуслова   */
-                            "H\'");
-                else                                      /* или                    */
-
-                    strcpy (ASS_CARD._BUFCARD.OPERAND,      /* для случая слова       */                     "F\'");
-
+                if (strcmp(SYM[i].RAZR, "15") <= 0) {
+                    strcpy (ASS_CARD._BUFCARD.OPERAND, "H\'");
+                } else {
+                    strcpy (ASS_CARD._BUFCARD.OPERAND, "F\'");
+                }
 
                 strcat(ASS_CARD._BUFCARD.OPERAND, gcvt(VALUE(SYM[i].INIT), 10, &RAB[0]));
-                ASS_CARD._BUFCARD.OPERAND[strlen        /* замыкающий апостроф    */
-                        (ASS_CARD._BUFCARD.OPERAND)] = '\'';  /*          и             */
+                ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = '\'';
 
-                memcpy (ASS_CARD._BUFCARD.COMM,          /* поле построчного комен-*/
-                        "Variable definition", 19);  /* тария                  */
+                memcpy (ASS_CARD._BUFCARD.COMM, "Variable definition", 19);
 
-                ZKARD();                                 /* запомнить операцию     */
-                /*    Ассемблера          */
+                ZKARD();
             }
         }
     }
