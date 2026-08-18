@@ -881,6 +881,13 @@ struct                                            /* таблица имен м�
 } SYM[NSYM];                                  /* кого вычисления        */
 
 int ISYM = 0;                                     /* текущий индекс таблицы */
+
+struct {
+    char NAME[8];
+    char POS[50];
+} REGS[3];
+
+int IREG = 0;
 /* имен                   */
 
 char NFIL[30] = "\x0";                             /* хранилище имени транс- */
@@ -1135,6 +1142,21 @@ int ZNK1() {
 
 int ODW1() {
     FORM();
+    // set return extra register
+    strcpy(REGS[IREG].NAME, "RVIX");
+    strcpy(REGS[IREG].POS, "14");
+    IREG++;
+
+    // initialize rn register
+    strcpy(REGS[IREG].NAME, "RN");
+    strcpy(REGS[IREG].POS, "3");
+    IREG++;
+
+    // initialize rs register
+    strcpy(REGS[IREG].NAME, "RS");
+    strcpy(REGS[IREG].POS, "4");
+    IREG++;
+
     strcpy(SYM[ISYM].NAME, "C");
     strcat(SYM[ISYM].NAME, FORMT[2]);
     strcpy (SYM[ISYM].RAZR, FORMT[2]);
@@ -1177,7 +1199,8 @@ int ODW2()
     memcpy(ASS_CARD._BUFCARD.COMM,"Load variable",13);
     ZKARD();
 
-    strcpy(ASS_CARD._BUFCARD.METKA, "LOOP");
+
+    memcpy(ASS_CARD._BUFCARD.METKA, "LOOP", 4);
     memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
     strcpy(ASS_CARD._BUFCARD.OPERAND, "RN,");
     strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[1]);
@@ -1245,7 +1268,7 @@ int ODW2()
     ZKARD();
 
 
-    strcpy(ASS_CARD._BUFCARD.METKA, "CONT");
+    memcpy(ASS_CARD._BUFCARD.METKA, "CONT", 4);
     memcpy(ASS_CARD._BUFCARD.OPERAC, "LH", 2);
     strcpy(ASS_CARD._BUFCARD.OPERAND, "RS,");
     strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[6]);
@@ -1287,7 +1310,7 @@ int ODW2()
     ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
     ZKARD();
 
-    strcpy(ASS_CARD._BUFCARD.METKA, "EXIT");
+    memcpy(ASS_CARD._BUFCARD.METKA, "EXIT", 4);
     memcpy(ASS_CARD._BUFCARD.OPERAC, "BCR", 2);
     strcpy(ASS_CARD._BUFCARD.OPERAND, "15,RVIX");
     ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
@@ -1480,6 +1503,18 @@ int OEN2() {
     /* ра общего назначения   */
     /*           и            */
     ZKARD();                                       /* запоминание ее         */
+
+    for (int j = 0; j < IREG; ++j) {
+        int i = 0;
+        while (REGS[j].NAME[i] != '\x0') {
+            ASS_CARD._BUFCARD.METKA[i] = REGS[j].NAME[i];
+            i++;
+        }
+        memcpy (ASS_CARD._BUFCARD.OPERAC, "EQU", 3);
+        memcpy (ASS_CARD._BUFCARD.OPERAND, REGS[j].POS, 2);
+        ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
+        ZKARD();
+    }
 
     memcpy (ASS_CARD._BUFCARD.METKA, "RRAB", 4);  /* формирование EQU-псев- */
     memcpy (ASS_CARD._BUFCARD.OPERAC, "EQU", 3);   /* дооперации определения */
