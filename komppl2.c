@@ -397,9 +397,9 @@ struct {
                 {212, 210, "BUK", 0},
                 {0,   211, "*  ", 0},
                 /*                              вход с символа - ODW      */
-                {214, 0,   "ODW", 0}, // TODO удалить
+                {214, 0,   "ODW", 0},
                 /* AVI TO AVI , WHILE ( BUK < LIT ) ; */
-                {215, 213, "D  ", 0}, // TODO удалить
+                {215, 213, "D  ", 0},
                 {216, 42, "O  ", 0},
                 {217, 215, "   ", 0},
 
@@ -407,14 +407,14 @@ struct {
 
                 {219, 217, "=  ", 0},
 
-                {220, 218, "CIF", 0}, // TODO AVI было до  этого
+                {220, 218, "CIF", 0},
                 {221, 219, "   ", 0},
 
                 {222, 220, "T  ", 0},
                 {223, 221, "O  ", 0},
                 {224, 222, "   ", 0},
 
-                {225, 223, "CIF", 0}, // TODO AVI было до  этого
+                {225, 223, "CIF", 0},
 
                 {226, 224, ",  ", 0},
 
@@ -737,18 +737,18 @@ int sint_ANAL() {
 
     L2:
     J = VXOD[numb(&STROKA[I], 1)].VX;
-    printf("Прочитали VXOD. I=%d J=%d DER='%s' CHAR='%c'\n", I, J, SINT[J].DER, STROKA[I]);
+//    printf("Прочитали VXOD. I=%d J=%d DER='%s' CHAR='%c'\n", I, J, SINT[J].DER, STROKA[I]);
 
     L3:
     J = SINT[J].POSL;
     if (J >= 0 && I >= 0) {
-        printf("Прочитали следующее правило. I=%d J=%d SINT CHAR='%s' CHAR='%c'\n", I, J, SINT[J].DER, STROKA[I]);
-        printf("Cтек: ");
-        for (int i = 0; i < sizeof(CEL) / sizeof(CEL[0]); ++i) {
-            printf(CEL[i].CEL1);
-            printf(", ");
-        }
-        printf("\n");
+//        printf("Прочитали следующее правило. I=%d J=%d SINT CHAR='%s' CHAR='%c'\n", I, J, SINT[J].DER, STROKA[I]);
+//        printf("Cтек: ");
+//        for (int i = 0; i < sizeof(CEL) / sizeof(CEL[0]); ++i) {
+//            printf(CEL[i].CEL1);
+//            printf(", ");
+//        }
+//        printf("\n");
     }
 
     L31:
@@ -761,9 +761,9 @@ int sint_ANAL() {
         I4 = I;
 
     if (VXOD[numb(SINT[J].DER, 3)].TYP == 'T') {
-        if (I >= 0 && J >= 0){
-            printf("Прочитан терминал '%s'. Символ строки: '%c' \n", SINT[J].DER, STROKA[I]);
-        }
+//        if (I >= 0 && J >= 0){
+//            printf("Прочитан терминал '%s'. Символ строки: '%c' \n", SINT[J].DER, STROKA[I]);
+//        }
         if (STROKA[I] == SINT[J].DER[0])
             goto L3;
         else
@@ -779,7 +779,7 @@ int sint_ANAL() {
         }
         I--;
 
-        printf("ПРОВЕРКА: %i , SINT: '%s', CEL:'%s'\n",strcmp(SINT[J].DER, CEL[K - 1].CEL1), SINT[J].DER, CEL[K-1].CEL1);
+//        printf("ПРОВЕРКА: %i , SINT: '%s', CEL:'%s'\n",strcmp(SINT[J].DER, CEL[K - 1].CEL1), SINT[J].DER, CEL[K-1].CEL1);
         if (!strcmp(SINT[J].DER, CEL[K - 1].CEL1)) {
             mdst(CEL[K - 1].CEL1, CEL[K - 1].CEL2, CEL[K - 1].CEL3, I, J);
 
@@ -788,7 +788,7 @@ int sint_ANAL() {
 
             L5:
 
-            printf("ПРОВЕРКА 2: K:'%i' ,CEL[K-1]:'%s'(i=%i). RESULT: %i \n",K,CEL[K - 1].CEL1, numb(CEL[K - 1].CEL1, 3), TPR[numb(CEL[K - 1].CEL1, 3)][numb(CEL[K - 1].CEL1, 3)]);
+//            printf("ПРОВЕРКА 2: K:'%i' ,CEL[K-1]:'%s'(i=%i). RESULT: %i \n",K,CEL[K - 1].CEL1, numb(CEL[K - 1].CEL1, 3), TPR[numb(CEL[K - 1].CEL1, 3)][numb(CEL[K - 1].CEL1, 3)]);
             if (TPR[numb(CEL[K - 1].CEL1, 3)][numb(CEL[K - 1].CEL1, 3)]) {
                 J = VXOD[numb(CEL[K - 1].CEL1, 3)].VX;
                 goto L3;
@@ -798,11 +798,11 @@ int sint_ANAL() {
 
             J = CEL[K - 1].CEL3;
             K--;
-            printf("'K' уменьшен: %i\n", K);
+//            printf("'K' уменьшен: %i\n", K);
             goto L3;
         }
 
-        printf("ПРОВЕРКА TPR НТ. J=%i, SINT: '%s'(i=%i), CEL:'%s'(j=%i). RESULT: %i,\n",J, SINT[J].DER,numb(SINT[J].DER, 3), CEL[K-1].CEL1,numb(CEL[K - 1].CEL1, 3),TPR[numb(SINT[J].DER, 3)][numb(CEL[K - 1].CEL1, 3)]);
+//        printf("ПРОВЕРКА TPR НТ. J=%i, SINT: '%s'(i=%i), CEL:'%s'(j=%i). RESULT: %i,\n",J, SINT[J].DER,numb(SINT[J].DER, 3), CEL[K-1].CEL1,numb(CEL[K - 1].CEL1, 3),TPR[numb(SINT[J].DER, 3)][numb(CEL[K - 1].CEL1, 3)]);
         if (!TPR[numb(SINT[J].DER, 3)][numb(CEL[K - 1].CEL1, 3)]){
             goto L9;
         }
@@ -812,15 +812,15 @@ int sint_ANAL() {
         J = VXOD[numb(SINT[J].DER, 3)].VX;
         goto L3;
     }
-    printf("ПРОВЕРКА TPR. J=%i, STROKA:'%s'(i=%i), SINT:'%s'(j=%i). SYMBOL: %c. RESULT: %i,\n", J, &STROKA[I],numb(&STROKA[I], 1),SINT[J].DER,numb(SINT[J].DER, 3),STROKA[I] ,TPR[numb(&STROKA[I], 1)][numb(SINT[J].DER, 3)]);
+//    printf("ПРОВЕРКА TPR. J=%i, STROKA:'%s'(i=%i), SINT:'%s'(j=%i). SYMBOL: %c. RESULT: %i,\n", J, &STROKA[I],numb(&STROKA[I], 1),SINT[J].DER,numb(SINT[J].DER, 3),STROKA[I] ,TPR[numb(&STROKA[I], 1)][numb(SINT[J].DER, 3)]);
     char ODC_CHECK[3] = {'O','D','C'};
     int q = 0;
     char OPA_CHECK[3] = {'O','P','A'};
-    printf("CHECK %i. DER: %s. C: %s\n\n",(strcmp(SINT[J].DER, OPA_CHECK)), SINT[J].DER, OPA_CHECK);
+//    printf("CHECK %i. DER: %s. C: %s\n\n",(strcmp(SINT[J].DER, OPA_CHECK)), SINT[J].DER, OPA_CHECK);
     if (!TPR[numb(&STROKA[I], 1)][numb(SINT[J].DER, 3)]
     || (STROKA[I] == 'D' && STROKA[I+1] == 'O' && (strcmp(SINT[J].DER, ODC_CHECK) == 0 || strcmp(SINT[J].DER, OPA_CHECK) == 0)))
         goto L8;
-    printf("Заполняем ячейку. SINT: %s, I=%i, J=%i\n", SINT[J].DER, I, J);
+//    printf("Заполняем ячейку. SINT: %s, I=%i, J=%i\n", SINT[J].DER, I, J);
     mcel(SINT[J].DER, I, J);
     goto L2;
 
@@ -829,9 +829,9 @@ int sint_ANAL() {
     I--;
 
     L9:
-    if (J > 0 && I > 0) {
-        printf("ПРОВЕРКА ALT SINT='%s'. J=%i. I='%i'. Символ I: '%c'\n", SINT[J].DER,J, I, STROKA[I]);
-    }
+//    if (J > 0 &&J I > 0) {
+//        printf("ПРОВЕРКА ALT SINT='%s'. J=%i. I='%i'. Символ I: '%c'\n", SINT[J].DER,J, I, STROKA[I]);
+//    }
     if (SINT[J].ALT != 0) {
         J = SINT[J].ALT;
         goto L31;
@@ -863,7 +863,7 @@ int sint_ANAL() {
     K--;
 
     if (J == 999) {
-        printf("failed! J=%i,I=%i,SYMBOL=%c\n", J, I, STROKA[I]);
+//        printf("failed! J=%i,I=%i,SYMBOL=%c\n", J, I, STROKA[I]);
         return 2;
     } else {
         goto L8;
@@ -1659,7 +1659,7 @@ int ZNK2() {
 
 
 int gen_COD() {
-    printf("ГЕНЕРАЦИЯ КОДА!\n");
+//    printf("ГЕНЕРАЦИЯ КОДА!\n");
     int NOSH;
 
     int (*FUN[NNETRM][2])() =
@@ -1746,18 +1746,18 @@ int main(int argc, char **argv) {
 
     compress_ISXTXT();
     build_TPR();
-    printf(STROKA);
-    printf("\n");
+//    printf(STROKA);
+//    printf("\n");
     if (sint_ANAL()) {
         STROKA[I4 + 20] = '\x0';
         printf("%s%s%s%s\n", "ошибка синтаксиса в исх.тексте -> ", "\"...", &STROKA[I4], "...\"");
         printf("%s\n", "трансляция прервана");
         return 0;
     } else {
-        printf("DST:\n");
-        for (int i = 0; i < L; ++i) {
-            printf("I=%i, DST='%s'\n",i, DST[i].DST1);
-        }
+//        printf("DST:\n");
+//        for (int i = 0; i < L; ++i) {
+//            printf("I=%i, DST='%s'\n",i, DST[i].DST1);
+//        }
         switch (gen_COD()) {
             case 0:
                 printf("%s\n", "трансляция завершена успешно");
